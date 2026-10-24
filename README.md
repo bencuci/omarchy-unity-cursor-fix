@@ -11,6 +11,10 @@ Hyprland's IPC and keeps the coordinates Unity sees continuous.
 
 Tested with Unity 6.6.7f1 on Omarchy (Hyprland 0.56.2).
 
+## Demonstration
+
+https://github.com/user-attachments/assets/f20a1df5-2bc6-4121-94db-253060342cb2
+
 ## Requirements
 
 - Omarchy on Arch Linux
