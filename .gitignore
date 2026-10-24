@@ -1,0 +1,9 @@
+# build products
+shim/libunity-cursor-wrap.so
+
+# test helpers
+tests/probe-gtk
+tests/spawn-test
+tests/xdrag
+tests/vmouse
+tests/xi-motion

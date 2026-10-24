@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Launch Unity Hub with the cursor-wrap shim preloaded.
+#
+# Unity Hub spawns the Editor as a child process, so the editor inherits this
+# environment.  Install this file at ~/.local/lib/unity-cursor-wrap/unityhub
+# and point a desktop entry at it (install.sh does both).
+
+set -euo pipefail
+
+here="$(cd "$(dirname "$(readlink -f "${BASH_SOURCE[0]}")")" && pwd)"
+shim="${UNITY_CURSOR_WRAP_LIB:-$here/libunity-cursor-wrap.so}"
+
+if [[ -r "$shim" ]]; then
+  export UNITY_CURSOR_WRAP=1
+  export LD_PRELOAD="$shim${LD_PRELOAD:+:$LD_PRELOAD}"
+fi
+
+exec /usr/bin/unityhub "$@"

@@ -1,0 +1,14 @@
+[Unit]
+Description=Load the Unity cursor-wrap shell plugin only while Unity is running
+After=graphical-session.target
+PartOf=graphical-session.target
+
+[Service]
+Type=simple
+ExecStart=%h/.local/lib/unity-cursor-wrap/watch.sh
+Restart=always
+RestartSec=3
+Nice=10
+
+[Install]
+WantedBy=graphical-session.target

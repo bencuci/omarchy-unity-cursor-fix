@@ -1,0 +1,36 @@
+{
+  "schemaVersion": 1,
+  "id": "felix.unity-cursor-wrap",
+  "name": "Unity Cursor Wrap",
+  "version": "1.0.0",
+  "author": "Benjamin Cuci",
+  "license": "MIT",
+  "description": "Makes the Unity Editor's infinite-mouse dragging work on Wayland: wraps the pointer at screen edges and keeps the Editor's pointer deltas continuous.",
+  "kinds": [
+    "service",
+    "bar-widget"
+  ],
+  "entryPoints": {
+    "service": "Service.qml",
+    "barWidget": "Widget.qml"
+  },
+  "barWidget": {
+    "displayName": "Unity cursor wrap",
+    "description": "Status and override for the editor shim that keeps Unity panning when the pointer reaches a screen edge. Loaded only while Unity runs.",
+    "category": "Development",
+    "allowMultiple": false,
+    "defaultSection": "right",
+    "defaults": {
+      "icon": "\u21c4"
+    },
+    "schema": [
+      {
+        "key": "icon",
+        "type": "string",
+        "label": "Icon",
+        "description": "Glyph drawn in the bar button.",
+        "defaultValue": "\u21c4"
+      }
+    ]
+  }
+}
